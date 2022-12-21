@@ -34,5 +34,16 @@ namespace SalesWebMvc.Models
             Status = status;
             Funcionario = funcionario;
         }
+
+        public RegistroVendas(DateTime data, double quantia, StatusVendas status, Funcionario funcionario)
+        {
+      
+            Data = data;
+            Quantia = quantia;
+            Status = status;
+            Funcionario = funcionario;
+        }
+
+
     }
 }

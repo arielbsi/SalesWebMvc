@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using SalesWebMvc.Models.Enums;
+using SalesWebMvc.Models;
+
+
 namespace SalesWebMvc
 {
     public class Program

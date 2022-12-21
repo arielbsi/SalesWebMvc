@@ -31,6 +31,14 @@ namespace SalesWebMvc.Models
 
         }
 
+
+        public Departamento(string nome)
+        {
+            
+            Nome = nome;
+
+        }
+
         public void AddFunc(Funcionario funcionario)
         {
 

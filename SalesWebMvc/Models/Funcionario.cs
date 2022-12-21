@@ -39,6 +39,16 @@ namespace SalesWebMvc.Models
             Departamento = departamento;
         }
 
+        public Funcionario(string nome, string email, DateTime nascimento, double baseSalarial, Departamento departamento)
+        {
+           
+            Nome = nome;
+            Email = email;
+            Nascimento = nascimento;
+            BaseSalarial = baseSalarial;
+            Departamento = departamento;
+        }
+
         public void AddVenda(RegistroVendas rv)
         {
 
