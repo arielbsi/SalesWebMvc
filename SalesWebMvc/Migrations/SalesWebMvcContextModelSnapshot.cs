@@ -48,7 +48,7 @@ namespace SalesWebMvc.Migrations
                         .HasColumnType("float")
                         .HasColumnName("Base_Salarial");
 
-                    b.Property<int?>("DepartamentoId")
+                    b.Property<int>("DepartamentoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -104,7 +104,9 @@ namespace SalesWebMvc.Migrations
                 {
                     b.HasOne("SalesWebMvc.Models.Departamento", "Departamento")
                         .WithMany("Funcionario")
-                        .HasForeignKey("DepartamentoId");
+                        .HasForeignKey("DepartamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Departamento");
                 });

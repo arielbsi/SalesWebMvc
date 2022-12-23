@@ -10,8 +10,8 @@ using SalesWebMvc.Data;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20221221144059_Criacao")]
-    partial class Criacao
+    [Migration("20221223125836_NovoBanco")]
+    partial class NovoBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,7 +50,7 @@ namespace SalesWebMvc.Migrations
                         .HasColumnType("float")
                         .HasColumnName("Base_Salarial");
 
-                    b.Property<int?>("DepartamentoId")
+                    b.Property<int>("DepartamentoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -106,7 +106,9 @@ namespace SalesWebMvc.Migrations
                 {
                     b.HasOne("SalesWebMvc.Models.Departamento", "Departamento")
                         .WithMany("Funcionario")
-                        .HasForeignKey("DepartamentoId");
+                        .HasForeignKey("DepartamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Departamento");
                 });

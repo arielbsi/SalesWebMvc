@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SalesWebMvc.Migrations
 {
-    public partial class Criacao : Migration
+    public partial class NovoBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace SalesWebMvc.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Nascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Base_Salarial = table.Column<double>(type: "float", nullable: false),
-                    DepartamentoId = table.Column<int>(type: "int", nullable: true)
+                    DepartamentoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,7 +40,7 @@ namespace SalesWebMvc.Migrations
                         column: x => x.DepartamentoId,
                         principalTable: "Departamento",
                         principalColumn: "Departamento_Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
