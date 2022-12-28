@@ -33,8 +33,8 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Funcionario funcionario) { 
         
-            _funcionarioService.insert(funcionario);
-        return RedirectToAction(nameof(Index));   
+            _funcionarioService.Insert(funcionario);
+            return RedirectToAction(nameof(Index));   
         }
     }
 }
